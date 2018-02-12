@@ -1,0 +1,128 @@
+
+Scenario Outline:     Login to BRC and List Applicant status check
+                      Given I navigate to "https://brc-viewer.herokuapp.com/users/sign_in"             
+                      And  I enter "rebecca" into input field having id "search-field"
+                      And  I click on element having id "search-btn"
+                      And  I wait for 1 sec
+                      Then I click on element having xpath "(html/body/div[1]/div/main/div/div/div/table/tbody/tr[1]/td[8]/div/button)"
+                      And I wait for 1 sec             
+                      Given element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[1]/div/div)" should have attribute "class" with value <fprint> 
+                      And element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[2]/div/div)" should have attribute "class" with value <sori> 
+                      And element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[3]/div/div)" should have attribute "class" with value <nsor> 
+                      And element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[4]/div/div)" should have attribute "class" with value <cori>
+                      And element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[5]/div/div)" should have attribute "class" with value <dcf> 
+                      And element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[6]/div/div)" should have attribute "class" with value <oos>                     
+                      Then element having xpath "(html/body/div[1]/div/main/div/div/div/table/tbody/tr[1]/td[3])" should have text as <presult> 
+           Examples:  
+                       |fprint|sori|nsor|cori|dcf|oos|presult|
+
+                       |"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"Suitable"|
+
+                       |"check-styling pending-results"|"check-styling pending-results"|"check-styling pending-results"|"check-styling pending-results"|"check-styling pending-results"|"check-styling pending-results"|"Pending"|
+
+                       |"check-styling not-applicable"|"check-styling not-applicable"|"check-styling not-applicable"|"check-styling not-applicable"|"check-styling not-applicable"|"check-styling not-applicable"|"Screening"| 
+
+                       |"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"Suitable"|
+
+Scenario Outline:     Login to BRC and List Applicant status check
+                      Given I navigate to "https://brc-viewer.herokuapp.com/users/sign_in"             
+                      And  I enter "rebecca" into input field having id "search-field"
+                      And  I click on element having id "search-btn"
+                      And  I wait for 1 sec
+                      Then I click on element having xpath "(html/body/div[1]/div/main/div/div/div/table/tbody/tr[1]/td[8]/div/button)"
+                      And I wait for 1 sec             
+                      Given element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[1]/div/div)" should have attribute "class" with value <fprint> 
+                      And element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[2]/div/div)" should have attribute "class" with value <sori> 
+                      And element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[3]/div/div)" should have attribute "class" with value <nsor> 
+                      And element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[4]/div/div)" should have attribute "class" with value <cori>
+                      And element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[5]/div/div)" should have attribute "class" with value <dcf> 
+                      And element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[6]/div/div)" should have attribute "class" with value <oos>                     
+                      Then element having xpath "(html/body/div[1]/div/main/div/div/div/table/tbody/tr[1]/td[3])" should have text as <presult> 
+           Examples:  
+                       |fprint|sori|nsor|cori|dcf|oos|presult|
+
+                       |"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"Suitable"|
+
+                       |"check-styling pending-results"|"check-styling pending-results"|"check-styling pending-results"|"check-styling pending-results"|"check-styling pending-results"|"check-styling pending-results"|"Pending"|
+
+                       |"check-styling not-applicable"|"check-styling not-applicable"|"check-styling not-applicable"|"check-styling not-applicable"|"check-styling not-applicable"|"check-styling not-applicable"|"Screening"| 
+
+                       |"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"Suitable"|
+
+
+Scenario Outline:     Login to BRC and List Applicant status check
+                      Given I navigate to "https://brc-viewer.herokuapp.com/users/sign_in"             
+                      And  I enter "rebecca" into input field having id "search-field"
+                      And  I click on element having id "search-btn"
+                      And  I wait for 1 sec
+                      Then I click on element having xpath "(html/body/div[1]/div/main/div/div/div/table/tbody/tr[1]/td[8]/div/button)"
+                      And I wait for 1 sec             
+                      Given element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[1]/div/div)" should have attribute "class" with value <fprint> 
+                      And element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[2]/div/div)" should have attribute "class" with value <sori> 
+                      And element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[3]/div/div)" should have attribute "class" with value <nsor> 
+                      And element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[4]/div/div)" should have attribute "class" with value <cori>
+                      And element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[5]/div/div)" should have attribute "class" with value <dcf> 
+                      And element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[6]/div/div)" should have attribute "class" with value <oos>                     
+                      Then element having xpath "(html/body/div[1]/div/main/div/div/div/table/tbody/tr[1]/td[3])" should have text as <presult> 
+           Examples:  
+                       |fprint|sori|nsor|cori|dcf|oos|presult|
+
+                       |"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"Suitable"|
+
+                       |"check-styling pending-results"|"check-styling pending-results"|"check-styling pending-results"|"check-styling pending-results"|"check-styling pending-results"|"check-styling pending-results"|"Pending"|
+
+                       |"check-styling not-applicable"|"check-styling not-applicable"|"check-styling not-applicable"|"check-styling not-applicable"|"check-styling not-applicable"|"check-styling not-applicable"|"Screening"| 
+
+                       |"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"Suitable"|
+
+
+Scenario Outline:     Login to BRC and List Applicant status check
+                      Given I navigate to "https://brc-viewer.herokuapp.com/users/sign_in"             
+                      And  I enter "rebecca" into input field having id "search-field"
+                      And  I click on element having id "search-btn"
+                      And  I wait for 1 sec
+                      Then I click on element having xpath "(html/body/div[1]/div/main/div/div/div/table/tbody/tr[1]/td[8]/div/button)"
+                      And I wait for 1 sec             
+                      Given element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[1]/div/div)" should have attribute "class" with value <fprint> 
+                      And element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[2]/div/div)" should have attribute "class" with value <sori> 
+                      And element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[3]/div/div)" should have attribute "class" with value <nsor> 
+                      And element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[4]/div/div)" should have attribute "class" with value <cori>
+                      And element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[5]/div/div)" should have attribute "class" with value <dcf> 
+                      And element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[6]/div/div)" should have attribute "class" with value <oos>                     
+                      Then element having xpath "(html/body/div[1]/div/main/div/div/div/table/tbody/tr[1]/td[3])" should have text as <presult> 
+           Examples:  
+                       |fprint|sori|nsor|cori|dcf|oos|presult|
+
+                       |"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"Suitable"|
+
+                       |"check-styling pending-results"|"check-styling pending-results"|"check-styling pending-results"|"check-styling pending-results"|"check-styling pending-results"|"check-styling pending-results"|"Pending"|
+
+                       |"check-styling not-applicable"|"check-styling not-applicable"|"check-styling not-applicable"|"check-styling not-applicable"|"check-styling not-applicable"|"check-styling not-applicable"|"Screening"| 
+
+                       |"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"Suitable"|
+
+Scenario Outline:     Login to BRC and List Applicant status check
+                      Given I navigate to "https://brc-viewer.herokuapp.com/users/sign_in"             
+                      And  I enter "rebecca" into input field having id "search-field"
+                      And  I click on element having id "search-btn"
+                      And  I wait for 1 sec
+                      Then I click on element having xpath "(html/body/div[1]/div/main/div/div/div/table/tbody/tr[1]/td[8]/div/button)"
+                      And I wait for 1 sec             
+                      Given element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[1]/div/div)" should have attribute "class" with value <fprint> 
+                      And element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[2]/div/div)" should have attribute "class" with value <sori> 
+                      And element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[3]/div/div)" should have attribute "class" with value <nsor> 
+                      And element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[4]/div/div)" should have attribute "class" with value <cori>
+                      And element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[5]/div/div)" should have attribute "class" with value <dcf> 
+                      And element having xpath "(html/body/div[3]/div[2]/div/div[2]/div/div[2]/div/a[6]/div/div)" should have attribute "class" with value <oos>                     
+                      Then element having xpath "(html/body/div[1]/div/main/div/div/div/table/tbody/tr[1]/td[3])" should have text as <presult> 
+           Examples:  
+                       |fprint|sori|nsor|cori|dcf|oos|presult|
+
+                       |"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"Suitable"|
+
+                       |"check-styling pending-results"|"check-styling pending-results"|"check-styling pending-results"|"check-styling pending-results"|"check-styling pending-results"|"check-styling pending-results"|"Pending"|
+
+                       |"check-styling not-applicable"|"check-styling not-applicable"|"check-styling not-applicable"|"check-styling not-applicable"|"check-styling not-applicable"|"check-styling not-applicable"|"Screening"| 
+
+                       |"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"check-styling passed"|"Suitable"|
+
