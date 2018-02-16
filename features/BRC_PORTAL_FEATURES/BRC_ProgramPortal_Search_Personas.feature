@@ -8,7 +8,12 @@ Scenario:    BRC Applicantion Portal Seach By Name
              Then I click on element having name "commit"
              And I wait for 2 sec
              Then I click on element having id "staffers"
-             Then element having class "user-name" should have text as "Ramadurai Nityakalyanam" 
+             And I wait for 2 sec             
+             Then element having class "user-name" should have text as "Ramadurai Nityakalyanam"
+             And I wait for 2 sec
+             Then element having class "requestor-name" should have text as "Bright Horizons"
+             And I wait for 2 sec
+             Then element having class "requestor-type" should have text as "Foster Care Agency"
              And I wait for 2 sec
              Then I click on element having id "applicants"
              And I wait for 2 sec
@@ -28,7 +33,7 @@ Scenario:    BRC Applicantion Portal Seach By Name
              And I wait for 2 sec             
              Then I click on element having id "applicants"
              And I wait for 2 sec             
-
+             
 Scenario:    BRC Applicantion Portal Sort Logout
              And I wait for 3 sec             
              Then I click on element having class "sign-out-link"     

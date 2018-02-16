@@ -317,3 +317,211 @@ else
 end
 
 end
+
+Then ("check pendingdata") do
+#$driver.find_element(:css,'#main-display > div.view-container > div.submission-table-container > table > tbody > tr > th:nth-child(10)').click
+#first_results = $driver.find_elements(:css,'#main-display > div.view-container > div.submission-table-container > div > table > tbody > tr > td:nth-child(10)')
+#first_result = first_results.map { |first_result01| puts first_result01.text }
+#first_results.map { |first_result01_check| expect(first_result01_check.text).to eql 'Pending' }
+
+ begin
+  $driver.find_element(:css,'#main-display > div.view-container > div.submission-table-container > table > tbody > tr > th:nth-child(10)').click
+   rescue Exception
+    puts "Table is Empty \n"
+    puts "No Records Retrieved \n"      
+    first_results = $driver.find_elements(:css,'#main-display > div.view-container > div.submission-table-container > div > table > tbody > tr > td:nth-child(10)')
+    first_results.map { |first_result01| puts first_result01.text }
+    first_results.map { |first_result01_check| expect(first_result01_check.text).to eql 'Pending' }   
+ end    
+
+
+end
+
+Then ("check pendingdata_negative") do
+#$driver.find_element(:css,'#main-display > div.view-container > div.submission-table-container > table > tbody > tr > th:nth-child(10)').click
+first_results = $driver.find_elements(:css,'#main-display > div.view-container > div.submission-table-container > div > table > tbody > tr > td:nth-child(10)')
+first_results.map { |first_result01| puts first_result01.text }
+first_results.map { |first_result01_check| expect(first_result01_check.text).not_to eql 'Not Pending' }
+end
+
+Then ("check submissioncompleteddata") do
+ begin
+   $driver.find_element(:css,'#main-display > div.view-container > div.submission-table-container > table > tbody > tr > th:nth-child(10)').click
+   rescue Exception
+    puts "Table is Empty \n"
+    puts "No Records Retrieved \n"    
+ else
+    first_results = $driver.find_elements(:css,'#main-display > div.view-container > div.submission-table-container > div > table > tbody > tr > td:nth-child(10)')
+    first_results.map { |first_result01| puts first_result01.text }
+    first_results.map { |first_result01_check| expect(first_result01_check.text).to eql 'Complete' }   
+ end    
+
+# $driver.find_element(:css,'#main-display > div.view-container > div.submission-table-container > table > tbody > tr > th:nth-child(10)').click
+# first_results = $driver.find_elements(:css,'#main-display > div.view-container > div.submission-table-container > div > table > tbody > tr > td:nth-child(10)')
+# first_results.map { |first_result01| puts first_result01.text }
+# first_results.map { |first_result01_check| expect(first_result01_check.text).to eql 'Complete' }   
+ end    
+
+
+Then ("check submissioncompleteddata_negative") do
+#$driver.find_element(:css,'#main-display > div.view-container > div.submission-table-container > table > tbody > tr > th:nth-child(10)').click
+first_results = $driver.find_elements(:css,'#main-display > div.view-container > div.submission-table-container > div > table > tbody > tr > td:nth-child(10)')
+first_results.map { |first_result01| puts first_result01.text }
+first_results.map { |first_result01_check| expect(first_result01_check.text).not_to eql 'Not Complete' }
+
+end
+
+Then ("check submissionsuitabilityunknown") do
+#$driver.find_element(:css,'#main-display > div.view-container > div.submission-table-container > table > tbody > tr > th:nth-child(11)').click
+first_results = $driver.find_elements(:css,'#main-display > div.view-container > div.submission-table-container > div > table > tbody > tr > td:nth-child(11)')
+first_results.map { |first_result01| puts first_result01.text }
+first_results.map { |first_result01_check| expect(first_result01_check.text).to eql 'Unknown' }
+
+end
+
+Then ("check submissionsuitabilityunknown_negative") do
+#$driver.find_element(:css,'#main-display > div.view-container > div.submission-table-container > table > tbody > tr > th:nth-child(11)').click
+first_results = $driver.find_elements(:css,'#main-display > div.view-container > div.submission-table-container > div > table > tbody > tr > td:nth-child(11)')
+first_results.map { |first_result01| puts first_result01.text }
+first_results.map { |first_result01_check| expect(first_result01_check.text).not_to eql 'Not Unknown' }
+
+end
+
+Then ("check submissionsuitabilitysuitable") do
+#$driver.find_element(:css,'#main-display > div.view-container > div.submission-table-container > table > tbody > tr > th:nth-child(11)').click
+begin
+   $driver.find_element(:css,'#main-display > div.view-container > div.submission-table-container > table > tbody > tr > th:nth-child(10)').click
+   rescue Exception
+    puts "Table is Empty \n"
+    puts "No Records Retrieved \n"    
+ else
+  first_results = $driver.find_elements(:css,'#main-display > div.view-container > div.submission-table-container > div > table > tbody > tr > td:nth-child(11)')
+  first_results.map { |first_result01| puts first_result01.text }
+  first_results.map { |first_result01_check| expect(first_result01_check.text).to eql 'Suitable' }
+
+ end    
+
+end
+
+Then ("check submissionsuitabilitysuitable_negative") do
+#$driver.find_element(:css,'#main-display > div.view-container > div.submission-table-container > table > tbody > tr > th:nth-child(11)').click
+first_results = $driver.find_elements(:css,'#main-display > div.view-container > div.submission-table-container > div > table > tbody > tr > td:nth-child(11)')
+first_results.map { |first_result01| puts first_result01.text }
+first_results.map { |first_result01_check| expect(first_result01_check.text).not_to eql 'Not Suitable' }
+
+end
+
+Then ("check submissionsuitabilitynotsuitable") do
+#$driver.find_element(:css,'#main-display > div.view-container > div.submission-table-container > table > tbody > tr > th:nth-child(11)').click
+first_results = $driver.find_elements(:css,'#main-display > div.view-container > div.submission-table-container > div > table > tbody > tr > td:nth-child(11)')
+first_results.map { |first_result01| puts first_result01.text }
+first_results.map { |first_result01_check| expect(first_result01_check.text).to eql 'Not Suitable' }
+
+end
+
+Then ("check submissionsuitabilitynotsuitable_negative") do
+#$driver.find_element(:css,'#main-display > div.view-container > div.submission-table-container > table > tbody > tr > th:nth-child(11)').click
+first_results = $driver.find_elements(:css,'#main-display > div.view-container > div.submission-table-container > div > table > tbody > tr > td:nth-child(11)')
+first_results.map { |first_result01| puts first_result01.text }
+first_results.map { |first_result01_check| expect(first_result01_check.text).not_to eql 'Suitable' }
+
+end
+
+Then ("check submissionroleemployee") do
+#$driver.find_element(:css,'#main-display > div.view-container > div.submission-table-container > table > tbody > tr > th:nth-child(4)').click
+first_results = $driver.find_elements(:css,'#main-display > div.view-container > div.submission-table-container > div > table > tbody > tr > td:nth-child(4)')
+first_results.map { |first_result01| puts first_result01.text }
+first_results.map { |first_result01_check| expect(first_result01_check.text).to eql 'Employee' }
+
+end
+
+Then ("check submissionroleemployee_negative") do
+#$driver.find_element(:css,'#main-display > div.view-container > div.submission-table-container > table > tbody > tr > th:nth-child(4)').click
+first_results = $driver.find_elements(:css,'#main-display > div.view-container > div.submission-table-container > div > table > tbody > tr > td:nth-child(4)')
+first_results.map { |first_result01| puts first_result01.text }
+first_results.map { |first_result01_check| expect(first_result01_check.text).not_to eql 'Not Employee' }
+
+end
+
+Then ("check submissionrolevolunteer") do
+#$driver.find_element(:css,'#main-display > div.view-container > div.submission-table-container > table > tbody > tr > th:nth-child(4)').click
+first_results = $driver.find_elements(:css,'#main-display > div.view-container > div.submission-table-container > div > table > tbody > tr > td:nth-child(4)')
+first_results.map { |first_result01| puts first_result01.text }
+first_results.map { |first_result01_check| expect(first_result01_check.text).to eql 'Volunteer/Intern' }
+
+end
+
+Then ("check submissionrolevolunteer_negative") do
+#$driver.find_element(:css,'#main-display > div.view-container > div.submission-table-container > table > tbody > tr > th:nth-child(4)').click
+first_results = $driver.find_elements(:css,'#main-display > div.view-container > div.submission-table-container > div > table > tbody > tr > td:nth-child(4)')
+first_results.map { |first_result01| puts first_result01.text }
+first_results.map { |first_result01_check| expect(first_result01_check.text).not_to eql 'Not Volunteer/Intern' }
+
+end
+
+Then ("check submissionroleFoster") do
+#$driver.find_element(:css,'#main-display > div.view-container > div.submission-table-container > table > tbody > tr > th:nth-child(4)').click
+first_results = $driver.find_elements(:css,'#main-display > div.view-container > div.submission-table-container > div > table > tbody > tr > td:nth-child(4)')
+first_results.map { |first_result01| puts first_result01.text }
+first_results.map { |first_result01_check| expect(first_result01_check.text).to eql 'Foster Parent' }
+
+end
+
+Then ("check submissionroleFoster_negative") do
+#$driver.find_element(:css,'#main-display > div.view-container > div.submission-table-container > table > tbody > tr > th:nth-child(4)').click
+first_results = $driver.find_elements(:css,'#main-display > div.view-container > div.submission-table-container > div > table > tbody > tr > td:nth-child(4)')
+first_results.map { |first_result01| puts first_result01.text }
+first_results.map { |first_result01_check| expect(first_result01_check.text).not_to eql 'Not Foster Parent' }
+
+end
+
+Then ("check submissionroleHousehold") do
+#$driver.find_element(:css,'#main-display > div.view-container > div.submission-table-container > table > tbody > tr > th:nth-child(4)').click
+first_results = $driver.find_elements(:css,'#main-display > div.view-container > div.submission-table-container > div > table > tbody > tr > td:nth-child(4)')
+first_results.map { |first_result01| puts first_result01.text }
+first_results.map { |first_result01_check| expect(first_result01_check.text).to eql 'Household Member' }
+
+end
+
+Then ("check submissionroleHousehold_negative") do
+#$driver.find_element(:css,'#main-display > div.view-container > div.submission-table-container > table > tbody > tr > th:nth-child(4)').click
+first_results = $driver.find_elements(:css,'#main-display > div.view-container > div.submission-table-container > div > table > tbody > tr > td:nth-child(4)')
+first_results.map { |first_result01| puts first_result01.text }
+first_results.map { |first_result01_check| expect(first_result01_check.text).not_to eql 'Not Household Member' }
+
+end
+
+Then ("check submissionroleCaregiver") do
+#$driver.find_element(:css,'#main-display > div.view-container > div.submission-table-container > table > tbody > tr > th:nth-child(4)').click
+first_results = $driver.find_elements(:css,'#main-display > div.view-container > div.submission-table-container > div > table > tbody > tr > td:nth-child(4)')
+first_results.map { |first_result01| puts first_result01.text }
+first_results.map { |first_result01_check| expect(first_result01_check.text).to eql 'In Home Caregiver' }
+
+end
+
+Then ("check submissionroleCaregiver_negative") do
+#$driver.find_element(:css,'#main-display > div.view-container > div.submission-table-container > table > tbody > tr > th:nth-child(4)').click
+first_results = $driver.find_elements(:css,'#main-display > div.view-container > div.submission-table-container > div > table > tbody > tr > td:nth-child(4)')
+first_results.map { |first_result01| puts first_result01.text }
+first_results.map { |first_result01_check| expect(first_result01_check.text).not_to eql 'Not In Home Caregiver' }
+
+end
+
+Then ("check submissionroleRelativegiver") do
+#$driver.find_element(:css,'#main-display > div.view-container > div.submission-table-container > table > tbody > tr > th:nth-child(4)').click
+first_results = $driver.find_elements(:css,'#main-display > div.view-container > div.submission-table-container > div > table > tbody > tr > td:nth-child(4)')
+first_results.map { |first_result01| puts first_result01.text }
+first_results.map { |first_result01_check| expect(first_result01_check.text).to eql 'Relative Caregiver' }
+
+end
+
+Then ("check submissionroleRelativegiver_negative") do
+#$driver.find_element(:css,'#main-display > div.view-container > div.submission-table-container > table > tbody > tr > th:nth-child(4)').click
+first_results = $driver.find_elements(:css,'#main-display > div.view-container > div.submission-table-container > div > table > tbody > tr > td:nth-child(4)')
+first_results.map { |first_result01| puts first_result01.text }
+first_results.map { |first_result01_check| expect(first_result01_check.text).not_to eql 'Not Relative Caregiver' }
+
+end
+
+
+
